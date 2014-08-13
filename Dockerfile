@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:stable
 
 #ADD . /usr/src/app
 #WORKDIR /usr/src/app
