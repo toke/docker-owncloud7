@@ -4,13 +4,11 @@ FROM debian:jessie
 #WORKDIR /usr/src/app
 
 # install your application's dependencies
-RUN apt-get update
-RUN apt-get install -y wget
+RUN apt-get update && apt-get install -y wget
 RUN wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key
 RUN apt-key add - < Release.key  
 RUN echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_7.0/ /' >> /etc/apt/sources.list.d/owncloud.list 
-RUN apt-get update
-RUN apt-get install -y owncloud
+RUN apt-get update && apt-get install -y owncloud
 
 RUN a2enmod ssl
 RUN a2ensite default-ssl
